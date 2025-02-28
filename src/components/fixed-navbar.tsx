@@ -1,4 +1,4 @@
-import { Home, Linkedin, X } from 'lucide-react'
+import { Home } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from './theme.toggle'
 

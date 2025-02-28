@@ -1,32 +1,28 @@
 "use client"
+
 import ProjectCard from "@/components/project-card"
 import { FixedNavbar } from "@/components/fixed-navbar"
-import { ThemeToggle } from "@/components/theme.toggle"
 import Skills from "@/components/skills"
 import Experience from "@/components/experiance"
 import { Badge } from "@/components/ui/badge"
+import Image from "next/image"
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce solution built with Next.js, TypeScript, and Stripe integration.",
-    previewUrl: "/api/placeholder/400/300",
-    liveUrl: "#",
-    githubUrl: "#"
+    title: "BlogZone - Manages your Blogs & Articles",
+    description: "BlogZone lets you save blogs and articles by link, add titles, mark them as read or unread, and organize them with tags for easy access.",
+    previewUrl: "/blog-zone.gif",
+    liveUrl: "https://blogzone-frontend.onrender.com",
+    githubUrl: "https://github.com/partiksingh1/Blogzone-backend",
+    skills: ["React", "Node.js", "Postgres", "Prisma", "Docker"]
   },
   {
-    title: "Task Management App",
-    description: "Real-time task management application with team collaboration features.",
-    previewUrl: "/api/placeholder/400/300",
-    liveUrl: "#",
-    githubUrl: "#"
-  },
-  {
-    title: "Weather Dashboard",
-    description: "Interactive weather dashboard with real-time updates and location-based forecasts.",
-    previewUrl: "/api/placeholder/400/300",
-    liveUrl: "#",
-    githubUrl: "#"
+    title: "URL Shortener",
+    description: "Built a URL shortening service using Go and React.",
+    previewUrl: "/url-shortner.gif",
+    liveUrl: "https://genuine-tiramisu-513c44.netlify.app/",
+    githubUrl: "https://github.com/partiksingh1/url-shortner",
+    skills: ["React", "Go", "Postgres", "Prisma", "Docker"]
   }
 ];
 
@@ -34,8 +30,8 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background text-foreground py-6 px-4 sm:px-6 md:px-8 lg:px-12">
       {/* Cover Image Section */}
-      <div className="relative w-full h-48 sm:h-64 md:h-80 lg:h-96">
-        <img
+      <div className="relative w-full h-40 sm:h-64 lg:h-60">
+        <Image
           src="/cover.jpg"
           alt="Cover"
           className="w-full h-full object-cover rounded-lg sm:rounded-xl lg:rounded-2xl"
@@ -43,10 +39,10 @@ export default function HomePage() {
       </div>
 
       {/* Profile Image Section */}
-      <div className="relative -mt-16 sm:-mt-20 mb-6">
-        <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-52 lg:h-52 mx-auto sm:ml-8 md:ml-12 lg:ml-20">
-          <img
-            src="/profile.png"
+      <div className="relative -mt-24 sm:-mt-20 mb-6">
+        <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 mx-auto sm:mx-20">
+          <Image
+            src="/profile1.png"
             alt="Profile"
             className="w-full h-full rounded-full border-4 border-background bg-background"
           />
@@ -56,19 +52,21 @@ export default function HomePage() {
       <div className="min-h-screen bg-background text-foreground">
         <main className="container mx-auto px-4">
           {/* Header Section */}
-          <section className="mb-12 md:mb-16">
-            <h1 className="text-gray-800 text-3xl sm:text-6xl font-semibold mb-2">
-            What’s up! I'm Partik! 👋😎💻
+          <section className="-mt-32 md:mb-20 text-end">
+            <h1 className="text-gray-800 text-3xl sm:text-4xl lg:text-5xl font-semibold mb-2 dark:text-white">
+              What&apos;s up.. I&apos;m Partik! 👋😎💻
             </h1>
+
           </section>
 
           {/* About Section */}
           <section className="mb-12 md:mb-16">
-            <h2 className="text-2xl sm:text-3xl font-semibold mb-2">About</h2>
-            <p className="mb-6 sm:mb-8 text-sm sm:text-base">
-              Software engineer focused on building scalable applications and shipping reliable, user-centric products.
-              I'm also known for having an impressive Pokémon card collection.
-            </p>
+            <div className="flex justify-start items-center mb-6">
+              <Badge className="text-xl sm:text-2xl md:text-3xl px-4 py-2 rounded-lg">
+                About
+              </Badge>
+            </div>
+            <p className="mb-4 sm:mb-6 md:text-xl">My name is Partik Singh Tanwar.I’m a Software Engineer who builds scalable apps and user-friendly products that make a real impact.</p>
           </section>
 
           {/* Experience Section */}
@@ -83,12 +81,12 @@ export default function HomePage() {
 
           {/* Projects Section */}
           <section className="mb-12 md:mb-16">
-            <div className="flex justify-center items-center">
-              <Badge className="text-xl sm:text-2xl md:text-3xl px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg mb-8 sm:mb-12">
+            <div className="flex justify-center items-center mb-8 sm:mb-12">
+              <Badge className="text-xl sm:text-2xl md:text-3xl px-4 py-2 rounded-lg">
                 Projects
               </Badge>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8">
               {projects.map((project, index) => (
                 <ProjectCard key={index} {...project} />
               ))}
@@ -96,7 +94,7 @@ export default function HomePage() {
           </section>
 
           {/* Contact Section */}
-          <section className="mb-12 md:mb-16 text-center px-4">
+          <section className="mb-12 md:mb-16 text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">Get in touch</h1>
             <p className="text-gray-600 text-sm sm:text-base">
               Want to chat?{' '}
@@ -108,8 +106,9 @@ export default function HomePage() {
               >
                 Send me a direct message on LinkedIn
               </a>
-              , and I'll get back to you as soon as I can.
+              , and I&apos;ll get back to you as soon as I can.
             </p>
+
           </section>
         </main>
 
