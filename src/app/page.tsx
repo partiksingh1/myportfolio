@@ -9,12 +9,12 @@ import Image from "next/image"
 
 const projects = [
   {
-    title: "BlogZone - Manages your Blogs & Articles",
-    description: "BlogZone lets you save blogs and articles by link, add titles, mark them as read or unread, and organize them with tags for easy access.",
+    title: "BlogZone - Manages your Blogs & Articles using AI",
+    description: "BlogZone lets you save blogs and articles by link,summarize it using AI, add titles, mark them as read or unread, and organize them with tags for easy access.",
     previewUrl: "/blog-zone.gif",
-    liveUrl: "https://blogzone-frontend.onrender.com",
-    githubUrl: "https://github.com/partiksingh1/Blogzone-backend",
-    skills: ["React", "Node.js", "Postgres", "Prisma", "Docker"]
+    liveUrl: "https://blogzone-8chd.onrender.com/",
+    githubUrl: "https://github.com/partiksingh1/Blogs-Tracker",
+    skills: ["React", "Node.js", "Postgres", "Prisma", "Docker","Gemeni AI"]
   },
   {
     title: "URL Shortener",
