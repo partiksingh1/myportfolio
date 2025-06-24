@@ -4,7 +4,7 @@ import { ThemeToggle } from './theme.toggle'
 
 export function FixedNavbar() {
   return (
-    <nav className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-background/80 backdrop-blur-sm rounded-full shadow-lg">
+    <nav className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-background/80 backdrop-blur-none rounded-full shadow-lg">
       <ul className="flex items-center space-x-2 px-4 py-2">
         <li>
           <Button

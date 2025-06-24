@@ -9,21 +9,19 @@ import Image from "next/image"
 
 const projects = [
   {
-    title: "BlogZone - Manages your Blogs & Articles using AI",
-    description: "BlogZone lets you save blogs and articles by link,summarize it using AI, add titles, mark them as read or unread, and organize them with tags for easy access.",
-    previewUrl: "/blog-zone.gif",
-    liveUrl: "https://blogzone-8chd.onrender.com/",
-    githubUrl: "https://github.com/partiksingh1/Blogs-Tracker",
-    skills: ["React", "Node.js", "Postgres", "Prisma", "Docker","Gemeni AI"]
+    title: "TopicTalk - Anonymous real-time chat application",
+    description: "An open, ephemeral, anonymous real-time chat application where users can create topic-based chat rooms and chat anonymously with auto-generated usernames. Messages are automatically deleted after 24 hours",
+    liveUrl: "https://topictalk-vdbgrq.fly.dev/",
+    githubUrl: "https://github.com/partiksingh1/TopicTalk",
+    skills: ["Websockets (ws)", "node-cron", "NodeJs", "Prisma", "Docker"]
   },
   {
-    title: "URL Shortener",
-    description: "Built a URL shortening service using Go and React.",
-    previewUrl: "/url-shortner.gif",
-    liveUrl: "https://genuine-tiramisu-513c44.netlify.app/",
-    githubUrl: "https://github.com/partiksingh1/url-shortner",
-    skills: ["React", "Go", "Postgres", "Prisma", "Docker"]
-  }
+    title: "BlogZone - Manages your Blogs & Articles using AI",
+    description: "BlogZone lets you save blogs and articles by link,summarize it using AI, add titles, mark them as read or unread, and organize them with tags for easy access.",
+    liveUrl: "https://blogzone-8chd.onrender.com/",
+    githubUrl: "https://github.com/partiksingh1/Blogs-Tracker",
+    skills: ["React", "NodeJs", "Postgres", "Prisma", "Docker","Gemeni AI"]
+  },
 ];
 
 export default function HomePage() {
@@ -32,7 +30,9 @@ export default function HomePage() {
       {/* Cover Image Section */}
       <div className="relative w-full h-40 sm:h-64 lg:h-60">
         <Image
-          src="/cover.jpg"
+          width={1000}
+          height={1000}
+          src="/cover.png"
           alt="Cover"
           className="w-full h-full object-cover rounded-lg sm:rounded-xl lg:rounded-2xl"
         />
@@ -42,9 +42,11 @@ export default function HomePage() {
       <div className="relative -mt-24 sm:-mt-20 mb-6">
         <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 mx-auto sm:mx-20">
           <Image
-            src="/profile1.png"
+            height={1000}
+            width={1000}
+            src="/profile1.jpeg"
             alt="Profile"
-            className="w-full h-full rounded-full border-4 border-background bg-background"
+            className="w-full h-full rounded-full border-2 border-background bg-background"
           />
         </div>
       </div>
@@ -73,15 +75,9 @@ export default function HomePage() {
           <section className="mb-12 md:mb-16">
             <Experience />
           </section>
-
-          {/* Skills Section */}
-          <section className="mb-12 md:mb-16">
-            <Skills />
-          </section>
-
           {/* Projects Section */}
           <section className="mb-12 md:mb-16">
-            <div className="flex justify-center items-center mb-8 sm:mb-12">
+            <div className="flex mb-8 sm:mb-12">
               <Badge className="text-xl sm:text-2xl md:text-3xl px-4 py-2 rounded-lg">
                 Projects
               </Badge>
@@ -93,6 +89,13 @@ export default function HomePage() {
             </div>
           </section>
 
+
+          {/* Skills Section */}
+          <section className="mb-12 md:mb-16">
+            <Skills />
+          </section>
+
+          
           {/* Contact Section */}
           <section className="mb-12 md:mb-16 text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">Get in touch</h1>
