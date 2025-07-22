@@ -20,41 +20,26 @@ const projects = [
     description: "BlogZone lets you save blogs and articles by link,summarize it using AI, add titles, mark them as read or unread, and organize them with tags for easy access.",
     liveUrl: "https://blogzone-8chd.onrender.com/",
     githubUrl: "https://github.com/partiksingh1/Blogs-Tracker",
-    skills: ["React", "NodeJs", "Postgres", "Prisma", "Docker","Gemeni AI"]
+    skills: ["React", "NodeJs", "Postgres", "Prisma", "Docker", "Gemeni AI"]
   },
 ];
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background text-foreground py-6 px-4 sm:px-6 md:px-8 lg:px-12">
-      {/* Cover Image Section */}
-      <div className="relative w-full h-40 sm:h-64 lg:h-60">
-        <Image
-          width={1000}
-          height={1000}
-          src="/cover.png"
-          alt="Cover"
-          className="w-full h-full object-cover rounded-lg sm:rounded-xl lg:rounded-2xl"
-        />
-      </div>
-
-      {/* Profile Image Section */}
-      <div className="relative -mt-24 sm:-mt-20 mb-6">
-        <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 mx-auto sm:mx-20">
-          <Image
-            height={1000}
-            width={1000}
-            src="/profile1.jpeg"
-            alt="Profile"
-            className="w-full h-full rounded-full border-2 border-background bg-background"
-          />
-        </div>
-      </div>
-
       <div className="min-h-screen bg-background text-foreground">
         <main className="container mx-auto px-4">
+          <div className="relative w-full h-40 sm:h-64 lg:h-60">
+            <Image
+              width={1000}
+              height={1000}
+              src="/cover.png"
+              alt="Cover"
+              className="w-full h-full object-cover rounded-lg sm:rounded-xl lg:rounded-2xl"
+            />
+          </div>
           {/* Header Section */}
-          <section className="-mt-32 md:mb-20 text-end">
+          <section className="mt-10 md:mb-20 text-start">
             <h1 className="text-gray-800 text-3xl sm:text-4xl lg:text-5xl font-semibold mb-2 dark:text-white">
               What&apos;s up.. I&apos;m Partik! 👋😎💻
             </h1>
@@ -95,7 +80,7 @@ export default function HomePage() {
             <Skills />
           </section>
 
-          
+
           {/* Contact Section */}
           <section className="mb-12 md:mb-16 text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">Get in touch</h1>

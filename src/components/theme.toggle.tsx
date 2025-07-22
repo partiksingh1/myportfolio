@@ -1,22 +1,29 @@
-"use client"
-
 import * as React from "react"
-import { Moon, Sun } from 'lucide-react'
+import { useState, useEffect } from "react"
+import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 
 import { Button } from "@/components/ui/button"
 
 export function ThemeToggle() {
   const { setTheme, theme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  // This makes sure the theme is loaded before rendering
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const toggleTheme = () => {
-    // Toggle between light, dark, and system themes
     if (theme === "light") {
       setTheme("dark")
-    }else {
+    } else {
       setTheme("light")
     }
   }
+
+  // Prevent rendering until mounted to avoid hydration mismatch
+  if (!mounted) return null
 
   return (
     <Button variant="outline" size="icon" onClick={toggleTheme}>
